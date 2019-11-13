@@ -1,0 +1,39 @@
+Route{
+    Station;
+    Route next;
+    Route prev;
+}
+
+Routing{
+    Subway
+    Map<Station, Route>
+}
+
+
+Subway{
+    String subwayHTML
+    String subwayName;
+    Routing
+}
+
+
+Station{
+    String stationName
+    Set<Subway>
+    Station next
+    Station prev
+}
+
+
+StationMap{
+    Map<String, Station>
+}
+
+GPSSubwayIndex{
+    List<Subway> subways
+    int steps;
+}
+
+GPSStationIndex{
+    Map<Station, GPSSubwayIndex>
+}
